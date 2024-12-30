@@ -1,0 +1,90 @@
+.embla {
+    --slide-spacing: 1rem;
+    --slide-size: 1200px;
+    --slide-height: 25rem;
+    padding: 0;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .embla {
+        --slide-size: 800px;
+    }
+}
+@media (max-width: 768px) {
+    .embla {
+        --slide-size: 650px;
+    }
+}
+@media (max-width: 640px) {
+    .embla {
+        --slide-size: 550px;
+    }
+}
+
+.embla__viewport {
+    width: 100%;
+}
+
+.embla__container {
+    position: relative;
+    display: flex;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+    position: relative;
+    min-width: var(--slide-size);
+    padding-left: var(--slide-spacing);
+    height: var(--slide-height);
+
+    overflow: hidden;
+}
+
+.embla__slide > img {
+    border-radius: 1rem;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.embla__slide__selected > img {
+    transform: scale(1.1);
+}
+
+.embla__dots {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.embla__dot {
+    background-color: #0000005e;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    height: 0.5rem;
+    margin: 0 0.25rem;
+    padding: 0;
+    width: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.embla__dot:focus {
+    outline: 0;
+}
+
+.embla__dot__selected {
+    width: 3rem;
+    background-color: #e50000;
+}
